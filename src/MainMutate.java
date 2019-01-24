@@ -19,8 +19,7 @@ public class MainMutate {
 
                 String[] dataInCollumn = entry.split(delimiter);
 
-                System.out.println("{value: \"" + dataInCollumn[0] + "\" , "s +
-                        "label: \"" + dataInCollumn[1] + "\"},");
+                System.out.println("{value: \"" + dataInCollumn[0] + "\" , label: \"" + dataInCollumn[1] + "\"},");
 
             }
 
