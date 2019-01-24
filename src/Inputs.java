@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class Inputs {
+public class Inputs implements InputsInteraface{
 
     public ArrayList<String[]> csvInput(String path) {
 
