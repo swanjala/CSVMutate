@@ -1,42 +1,18 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import javax.swing.*;
+
+import java.util.ArrayList;
 
 public class MainMutate {
 
     public static void main(String[] args) {
+        String path = JOptionPane.showInputDialog("Enter path to file");
+        InputsInteraface inputsInteraface = new Inputs();
+        ArrayList<String[]> responseData = inputsInteraface.csvInput(path);
 
-        String csvInput = "/Users/sam/desktop/country/Domicile_table.csv";
-        BufferedReader bufferedReader = null;
-        String entry = "";
-        String delimiter = ",";
-
-        try {
-
-            bufferedReader = new BufferedReader(new FileReader(csvInput));
-            while ((entry = bufferedReader.readLine()) != null) {
-
-                String[] dataInCollumn = entry.split(delimiter);
-
-                System.out.println("{value: \"" + dataInCollumn[0] + "\" , label: \"" + dataInCollumn[1] + "\"},");
-
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (bufferedReader != null) {
-                try {
-                    bufferedReader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        JOptionPane.showMessageDialog(null,"data collected"+
+                responseData.iterator());
 
     }
+
 
 }
